@@ -14,4 +14,8 @@ class PokemonUseCase {
     func getPokemonList(limit: Int, offset: Int) async throws -> ListPokemon {
         return try await repository.getPokemonList(limit: limit, offset: offset)
     }
+    
+    func getPokemon(url: String) async throws -> Pokemon {
+        return try await repository.getPokemon(url: url)
+    }
 }

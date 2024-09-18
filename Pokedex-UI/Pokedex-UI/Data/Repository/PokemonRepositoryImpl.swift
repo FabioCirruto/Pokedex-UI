@@ -19,4 +19,14 @@ class PokemonRepositoryImpl: PokemonRepoistory {
             throw(error)
         }
     }
+    
+    func getPokemon(url: String) async throws -> Pokemon {
+        do {
+            let dto = try await dataSource.getPokemon(url: url)
+            let dtoDesc = try await dataSource.getPokemonDesc(url: dto.species?.url ?? "")
+            return Pokemon(info: dto, desc: dtoDesc)
+        } catch (let error) {
+            throw(error)
+        }
+    }
 }

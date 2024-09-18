@@ -29,6 +29,10 @@
 		B34258172C98BEC100C3C709 /* PokemonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34258162C98BEC100C3C709 /* PokemonUseCase.swift */; };
 		B34258192C98BF7200C3C709 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34258182C98BF7200C3C709 /* PokemonView.swift */; };
 		B342581B2C98BF7F00C3C709 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B342581A2C98BF7F00C3C709 /* PokemonViewModel.swift */; };
+		B397EA922C9AB0BC00032453 /* PokemonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA912C9AB0BC00032453 /* PokemonDto.swift */; };
+		B397EA942C9AB15300032453 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA932C9AB15300032453 /* Pokemon.swift */; };
+		B397EA962C9AB18800032453 /* PokemonDescDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA952C9AB18800032453 /* PokemonDescDto.swift */; };
+		B397EA982C9ABDED00032453 /* PokemonInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA972C9ABDED00032453 /* PokemonInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		B34258162C98BEC100C3C709 /* PokemonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonUseCase.swift; sourceTree = "<group>"; };
 		B34258182C98BF7200C3C709 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		B342581A2C98BF7F00C3C709 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		B397EA912C9AB0BC00032453 /* PokemonDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDto.swift; sourceTree = "<group>"; };
+		B397EA932C9AB15300032453 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		B397EA952C9AB18800032453 /* PokemonDescDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDescDto.swift; sourceTree = "<group>"; };
+		B397EA972C9ABDED00032453 /* PokemonInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,7 @@
 			children = (
 				B34258182C98BF7200C3C709 /* PokemonView.swift */,
 				B342581A2C98BF7F00C3C709 /* PokemonViewModel.swift */,
+				B397EA972C9ABDED00032453 /* PokemonInfoView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -164,6 +173,8 @@
 			children = (
 				B34257F42C98B87D00C3C709 /* ListDto.swift */,
 				B34257F62C98B89F00C3C709 /* PokemonInfoDto.swift */,
+				B397EA912C9AB0BC00032453 /* PokemonDto.swift */,
+				B397EA952C9AB18800032453 /* PokemonDescDto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			children = (
 				B342580E2C98BCE100C3C709 /* ListPokemon.swift */,
 				B34258102C98BCE800C3C709 /* PokemonInfo.swift */,
+				B397EA932C9AB15300032453 /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,12 +322,16 @@
 				B34257FF2C98BAFD00C3C709 /* PokemonService.swift in Sources */,
 				B342581B2C98BF7F00C3C709 /* PokemonViewModel.swift in Sources */,
 				B34257D32C98AEFD00C3C709 /* Pokedex_UIApp.swift in Sources */,
+				B397EA942C9AB15300032453 /* Pokemon.swift in Sources */,
 				B34257EA2C98B78300C3C709 /* Endpoint.swift in Sources */,
 				B34257FD2C98BADD00C3C709 /* RequestProvider.swift in Sources */,
+				B397EA982C9ABDED00032453 /* PokemonInfoView.swift in Sources */,
 				B34257E62C98B14500C3C709 /* Enviroment.swift in Sources */,
 				B34258092C98BBFA00C3C709 /* Pokemon-UI+DI.swift in Sources */,
 				B34258042C98BB9800C3C709 /* PokemonDataSource.swift in Sources */,
 				B34257F52C98B87D00C3C709 /* ListDto.swift in Sources */,
+				B397EA962C9AB18800032453 /* PokemonDescDto.swift in Sources */,
+				B397EA922C9AB0BC00032453 /* PokemonDto.swift in Sources */,
 				B342580F2C98BCE100C3C709 /* ListPokemon.swift in Sources */,
 				B34258192C98BF7200C3C709 /* PokemonView.swift in Sources */,
 				B342580C2C98BCC800C3C709 /* PokemonRepoistory.swift in Sources */,

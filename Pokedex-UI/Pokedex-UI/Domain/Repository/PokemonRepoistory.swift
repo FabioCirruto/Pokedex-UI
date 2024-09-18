@@ -9,4 +9,6 @@ import Foundation
 
 protocol PokemonRepoistory {
     func getPokemonList(limit: Int, offset: Int) async throws -> ListPokemon
+    
+    func getPokemon(url: String) async throws -> Pokemon
 }

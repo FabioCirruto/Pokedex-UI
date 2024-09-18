@@ -13,17 +13,24 @@ struct PokemonView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment: .leading, spacing: 20) {
+                if let pokemon = viewModel.pokemon {
+                    PokemonInfoView(pokemon: pokemon)
+                }
+                
                 List {
                     ForEach(viewModel.pokemonList ?? [], id: \.self) { pokemon in
                         Text(pokemon.name)
+                            .onTapGesture {
+                                viewModel.getInfoPokemon(url: pokemon.detail)
+                            }
                     }
-                }.onAppear {
-                    viewModel.download()
                 }
+                
+            }.onAppear {
+                viewModel.download()
             }
-            
-            .navigationTitle("Pokedex-UI")
+            .navigationTitle("Pokemon-UI")
         }
     }
 }

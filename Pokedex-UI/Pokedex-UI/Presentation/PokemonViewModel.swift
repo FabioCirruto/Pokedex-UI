@@ -12,6 +12,7 @@ import Factory
     @Injected(\.pokemonUseCase) private var useCase
     
     @Published var pokemonList: [PokemonInfo]?
+    @Published var pokemon: Pokemon?
     
     func download() {
         Task {
@@ -19,10 +20,28 @@ import Factory
         }
     }
     
+    func getInfoPokemon(url: String) {
+        Task {
+            await getPokemon(url: url)
+        }
+    }
+    
     private func getPokemonList() async {
         do {
-            let pokemon = try await useCase.getPokemonList(limit: 101, offset: 0)
-            pokemonList = pokemon.results
+            let pokemonLists = try await useCase.getPokemonList(limit: 101, offset: 0)
+            pokemonList = pokemonLists.results
+            if let first = pokemonLists.results.first {
+                getInfoPokemon(url: first.detail)
+            }
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func getPokemon(url: String) async {
+        do {
+            let pokemon = try await useCase.getPokemon(url: url)
+            self.pokemon = pokemon
         } catch (let error) {
             print(error.localizedDescription)
         }
