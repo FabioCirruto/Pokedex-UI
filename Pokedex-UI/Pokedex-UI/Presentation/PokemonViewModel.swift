@@ -7,43 +7,56 @@
 
 import Foundation
 import Factory
+import Combine
 
 @MainActor class PokemonViewModel: ObservableObject {
     @Injected(\.pokemonUseCase) private var useCase
     
     @Published var pokemonList: [PokemonInfo]?
     @Published var pokemon: Pokemon?
+    private var cancellables = Set<AnyCancellable>()
     
-    func download() {
-        Task {
-            await getPokemonList()
-        }
+    init() {
+        setupSubscriptions()
     }
     
-    func getInfoPokemon(url: String) {
-        Task {
-            await getPokemon(url: url)
-        }
+    deinit {
+        cancellables.removeAll()
     }
     
-    private func getPokemonList() async {
+    func fetchData() async {
         do {
-            let pokemonLists = try await useCase.getPokemonList(limit: 101, offset: 0)
-            pokemonList = pokemonLists.results
-            if let first = pokemonLists.results.first {
-                getInfoPokemon(url: first.detail)
+            self.pokemonList = try await getPokemonList().results
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getInfoPokemon(url: String) async throws {
+        do {
+            self.pokemon = try await getPokemon(url: url)
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func setupSubscriptions() {
+        $pokemonList
+            .sink { [weak self] newPokemonList in
+                if let newList = newPokemonList, let first = newList.first  {
+                    Task {
+                        try await self?.getInfoPokemon(url: first.detail)
+                    }
+                }
             }
-        } catch (let error) {
-            print(error.localizedDescription)
-        }
+            .store(in: &cancellables)
     }
     
-    private func getPokemon(url: String) async {
-        do {
-            let pokemon = try await useCase.getPokemon(url: url)
-            self.pokemon = pokemon
-        } catch (let error) {
-            print(error.localizedDescription)
-        }
+    private func getPokemonList() async throws -> ListPokemon {
+        return try await useCase.getPokemonList(limit: 101, offset: 0)
+    }
+    
+    private func getPokemon(url: String) async throws -> Pokemon {
+        return try await useCase.getPokemon(url: url)
     }
 }

@@ -8,18 +8,24 @@
 import Foundation
 
 class PokemonDto: Codable {
+    init(name: String? = nil, sprites: ImagesDto? = nil, types: [TypeDto]? = nil, species: SpeciesInfoDto? = nil) {
+        self.name = name
+        self.sprites = sprites
+        self.types = types
+        self.species = species
+    }
+    
     var name: String?
     var sprites: ImagesDto?
     var types: [TypeDto]?
     var species: SpeciesInfoDto?
 }
 
-class TypesDto: Codable {
-    var name: String?
-    var url: String?
-}
-
 class ImagesDto: Codable {
+    init(frontDefault: String? = nil) {
+        self.frontDefault = frontDefault
+    }
+    
     var frontDefault: String?
     
     enum CodingKeys: String, CodingKey {
@@ -28,6 +34,11 @@ class ImagesDto: Codable {
 }
 
 class SpeciesInfoDto: Codable {
+    init(name: String? = nil, url: String? = nil) {
+        self.name = name
+        self.url = url
+    }
+    
     var name: String?
     var url: String?
 }

@@ -8,6 +8,10 @@
 import Foundation
 
 class PokemonDescDto: Codable {
+    init(flavorTextEntries: [FlavorTextEntriesDto]? = nil) {
+        self.flavorTextEntries = flavorTextEntries
+    }
+    
     var flavorTextEntries: [FlavorTextEntriesDto]?
     
     enum CodingKeys: String, CodingKey {
@@ -16,7 +20,11 @@ class PokemonDescDto: Codable {
 }
 
 class FlavorTextEntriesDto: Codable {
-    var flavorText: String
+    init(flavorText: String? = nil) {
+        self.flavorText = flavorText
+    }
+    
+    var flavorText: String?
     
     enum CodingKeys: String, CodingKey {
         case flavorText = "flavor_text"

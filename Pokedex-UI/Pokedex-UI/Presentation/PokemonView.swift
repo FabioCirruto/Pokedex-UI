@@ -22,13 +22,18 @@ struct PokemonView: View {
                     ForEach(viewModel.pokemonList ?? [], id: \.self) { pokemon in
                         Text(pokemon.name)
                             .onTapGesture {
-                                viewModel.getInfoPokemon(url: pokemon.detail)
+                                Task {
+                                    try await viewModel.getInfoPokemon(url: pokemon.detail)
+                                }
                             }
                     }
                 }
                 
             }.onAppear {
-                viewModel.download()
+                Task {
+                    await viewModel.fetchData()
+                }
+                //viewModel.download()
             }
             .navigationTitle("Pokemon-UI")
         }
