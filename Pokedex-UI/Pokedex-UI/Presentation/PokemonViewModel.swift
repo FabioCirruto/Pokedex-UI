@@ -52,11 +52,11 @@ import Combine
             .store(in: &cancellables)
     }
     
-    private func getPokemonList() async throws -> ListPokemon {
+    func getPokemonList() async throws -> ListPokemon {
         return try await useCase.getPokemonList(limit: 101, offset: 0)
     }
     
-    private func getPokemon(url: String) async throws -> Pokemon {
+    func getPokemon(url: String) async throws -> Pokemon {
         return try await useCase.getPokemon(url: url)
     }
 }

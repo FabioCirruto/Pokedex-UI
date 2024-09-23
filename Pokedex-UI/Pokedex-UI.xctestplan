@@ -22,6 +22,13 @@
         "identifier" : "B397EA9C2C9AC1D700032453",
         "name" : "Pokedex-UITests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Pokedex-UI.xcodeproj",
+        "identifier" : "B3C0DF0F2CA171A800D19C83",
+        "name" : "Pokedex-UIUITests"
+      }
     }
   ],
   "version" : 1

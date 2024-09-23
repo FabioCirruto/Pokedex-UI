@@ -45,6 +45,28 @@
                ReferencedContainer = "container:Pokedex-UI.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B397EAE22CA16A9800032453"
+               BuildableName = "Pokedex-UITestsUI.xctest"
+               BlueprintName = "Pokedex-UITestsUI"
+               ReferencedContainer = "container:Pokedex-UI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B3C0DF0F2CA171A800D19C83"
+               BuildableName = "Pokedex-UIUITests.xctest"
+               BlueprintName = "Pokedex-UIUITests"
+               ReferencedContainer = "container:Pokedex-UI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

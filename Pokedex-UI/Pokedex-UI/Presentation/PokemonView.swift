@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Factory
+import PreviewSnapshots
 
 struct PokemonView: View {
     
@@ -29,17 +31,34 @@ struct PokemonView: View {
                     }
                 }
                 
-            }.onAppear {
-                Task {
-                    await viewModel.fetchData()
-                }
-                //viewModel.download()
+            }.task {
+                await viewModel.fetchData()
             }
             .navigationTitle("Pokemon-UI")
         }
     }
 }
 
-#Preview {
-    PokemonView()
+//#Preview {
+//    let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
+//    return PokemonView()
+//}
+
+struct PokemonView_Previews: PreviewProvider {
+    static var previews: some View {
+        let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
+        snapshots.previews.previewLayout(.sizeThatFits)
+    }
+
+    static var snapshots: PreviewSnapshots<String> {
+        let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
+        return PreviewSnapshots(
+            configurations: [
+                .init(name: "Preview", state: "3 elementi"),
+            ],
+            configure: { state in
+                PokemonView()
+            }
+        )
+    }
 }
