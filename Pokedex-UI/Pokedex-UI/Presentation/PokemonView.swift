@@ -31,34 +31,34 @@ struct PokemonView: View {
                     }
                 }
                 
-            }.task {
-                await viewModel.fetchData()
+            }.onAppear {
+                Task {
+                    await viewModel.fetchData()
+                }
             }
             .navigationTitle("Pokemon-UI")
         }
     }
 }
 
-//#Preview {
-//    let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
-//    return PokemonView()
-//}
-
-struct PokemonView_Previews: PreviewProvider {
-    static var previews: some View {
-        let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
-        snapshots.previews.previewLayout(.sizeThatFits)
-    }
-
-    static var snapshots: PreviewSnapshots<String> {
-        let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
-        return PreviewSnapshots(
-            configurations: [
-                .init(name: "Preview", state: "3 elementi"),
-            ],
-            configure: { state in
-                PokemonView()
-            }
-        )
-    }
+#Preview {
+    let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
+    return PokemonView()
 }
+
+//struct PokemonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        snapshots.previews.previewLayout(.sizeThatFits)
+//    }
+//
+//    static var snapshots: PreviewSnapshots<String> {
+//        PreviewSnapshots(
+//            configurations: [
+//                .init(name: "Default", state: "3 elementi"),
+//            ],
+//            configure: { state in
+//                PokemonView()
+//            }
+//        )
+//    }
+//}

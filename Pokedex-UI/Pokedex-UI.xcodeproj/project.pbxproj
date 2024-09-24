@@ -56,8 +56,8 @@
 		B3565F7F2CA179080026DD83 /* Pokemon-UI+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34258082C98BBFA00C3C709 /* Pokemon-UI+DI.swift */; };
 		B3565F812CA179340026DD83 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = B3565F802CA179340026DD83 /* Factory */; };
 		B3565F832CA1797E0026DD83 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B3565F822CA1797E0026DD83 /* Alamofire */; };
-		B3565F8C2CA1A80E0026DD83 /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = B3565F8B2CA1A80E0026DD83 /* PreviewSnapshots */; };
-		B3565F8E2CA1A80E0026DD83 /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B3565F8D2CA1A80E0026DD83 /* PreviewSnapshotsTesting */; };
+		B362C7622CA2E41C00445D5D /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = B362C7612CA2E41C00445D5D /* PreviewSnapshots */; };
+		B362C7642CA2E41C00445D5D /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B362C7632CA2E41C00445D5D /* PreviewSnapshotsTesting */; };
 		B397EA922C9AB0BC00032453 /* PokemonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA912C9AB0BC00032453 /* PokemonDto.swift */; };
 		B397EA942C9AB15300032453 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA932C9AB15300032453 /* Pokemon.swift */; };
 		B397EA962C9AB18800032453 /* PokemonDescDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397EA952C9AB18800032453 /* PokemonDescDto.swift */; };
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3565F8C2CA1A80E0026DD83 /* PreviewSnapshots in Frameworks */,
+				B362C7622CA2E41C00445D5D /* PreviewSnapshots in Frameworks */,
 				B34257F22C98B83000C3C709 /* Alamofire in Frameworks */,
 				B34257FA2C98BA5200C3C709 /* Factory in Frameworks */,
 			);
@@ -158,7 +158,7 @@
 				B3565F812CA179340026DD83 /* Factory in Frameworks */,
 				B3565F832CA1797E0026DD83 /* Alamofire in Frameworks */,
 				B3565F662CA174E60026DD83 /* InlineSnapshotTesting in Frameworks */,
-				B3565F8E2CA1A80E0026DD83 /* PreviewSnapshotsTesting in Frameworks */,
+				B362C7642CA2E41C00445D5D /* PreviewSnapshotsTesting in Frameworks */,
 				B3565F682CA174E60026DD83 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +383,7 @@
 			packageProductDependencies = (
 				B34257F12C98B83000C3C709 /* Alamofire */,
 				B34257F92C98BA5200C3C709 /* Factory */,
-				B3565F8B2CA1A80E0026DD83 /* PreviewSnapshots */,
+				B362C7612CA2E41C00445D5D /* PreviewSnapshots */,
 			);
 			productName = "Pokedex-UI";
 			productReference = B34257CF2C98AEFD00C3C709 /* Pokedex-UI.app */;
@@ -428,7 +428,7 @@
 				B3565F672CA174E60026DD83 /* SnapshotTesting */,
 				B3565F802CA179340026DD83 /* Factory */,
 				B3565F822CA1797E0026DD83 /* Alamofire */,
-				B3565F8D2CA1A80E0026DD83 /* PreviewSnapshotsTesting */,
+				B362C7632CA2E41C00445D5D /* PreviewSnapshotsTesting */,
 			);
 			productName = "Pokedex-UIUITests";
 			productReference = B3C0DF102CA171A800D19C83 /* Pokedex-UIUITests.xctest */;
@@ -738,6 +738,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -769,6 +770,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -959,12 +961,12 @@
 			package = B34257F02C98B83000C3C709 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		B3565F8B2CA1A80E0026DD83 /* PreviewSnapshots */ = {
+		B362C7612CA2E41C00445D5D /* PreviewSnapshots */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3565F8A2CA1A80E0026DD83 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
 			productName = PreviewSnapshots;
 		};
-		B3565F8D2CA1A80E0026DD83 /* PreviewSnapshotsTesting */ = {
+		B362C7632CA2E41C00445D5D /* PreviewSnapshotsTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3565F8A2CA1A80E0026DD83 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
 			productName = PreviewSnapshotsTesting;
