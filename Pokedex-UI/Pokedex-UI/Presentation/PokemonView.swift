@@ -17,7 +17,7 @@ struct PokemonView: View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
                 if let pokemon = viewModel.pokemon {
-                    PokemonInfoView(pokemon: pokemon)
+                    PokemonInfoView(pokemon: pokemon, bundle: nil)
                 }
                 
                 List {
@@ -45,20 +45,3 @@ struct PokemonView: View {
     let _ = Container.shared.pokemonService.register { PokemonServiceMockImpl() }
     return PokemonView()
 }
-
-//struct PokemonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        snapshots.previews.previewLayout(.sizeThatFits)
-//    }
-//
-//    static var snapshots: PreviewSnapshots<String> {
-//        PreviewSnapshots(
-//            configurations: [
-//                .init(name: "Default", state: "3 elementi"),
-//            ],
-//            configure: { state in
-//                PokemonView()
-//            }
-//        )
-//    }
-//}
